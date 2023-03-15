@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>Form</title>
+</head>
+<body>
+<form>
+<fieldset>
+<legend>Sign Up</legend>
+<label for="name">Name</label><br>
+<input type="text" name="name"size=25 placeholder="Fullname"required><br><br>
+
+<label for="Email-id">Email-ID</label><br>
+<input type="text" name="Email-id" placeholder="gmail id"required><br><br>
+
+<label for="Password">Password</label><br>
+<input type="password" name="password" placeholder="8 characters" maxlength="8"required><br><br>
+
+<label for="Confirm_password">Confirm Password</label><br>
+<input type="password" name="confirm password" placeholder="8 characters" maxlength="8"required><br><br>
+
+<label for="date"> <abbr title="Date of Birth">DOB</abbr></label><br>
+<input type="date" name="date"><br><br>
+
+<label for="weight">Weight</label><br>
+<input type="number"name="weight" min="0" max="100" step="10"><br><br>
+
+<label for="gender">Gender</label><br>
+<input type="radio" name="sex">Male</input>
+<input type="radio" name="sex">Female</input>
+<input type="radio" name="sex">Other</input>
+
+<br><br>
+
+<label for="file">Choose Photo</file><br>
+<input type="file" name="file">
+
+<br><br>
+
+<label for="city">City</label>
+<select name="city">
+<option>Choose City</choose>
+<option>Bangalore</option>
+<option>Mangalore</option>
+<option>Mysore</option>
+<option>Sirsi</option>
+</select>
+
+<br><br>
+
+<label for="address">Address</label><br>
+<textarea rows="8" cols="10"></textarea>
+
+<br><br>
+
+<label for="ques">Security Question</label>
+<select name="ques">
+<option>Choose</choose>
+<option>What is your name?</option>
+<option>what is your favourite color?</option>
+<option>What was your first pet name?</option>
+<option>What was your primary school name?</option>
+</select>
+
+<br><br>
+
+<label for="ans">Security Answer</label>&nbsp
+<input type="text" name="ans">
+
+<br><br>
+
+
+<input type="checkbox" name="terms and condition"required>
+<label for="terms and conditions">I agree terms and conditions</label>  
+
+<br>
+<br>
+<input type="submit" value="Submit">
+<input type="reset">
+
