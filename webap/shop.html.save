@@ -1,0 +1,168 @@
+<html>
+<head>
+<title>Inventory mgt</title>
+</head>
+<style>
+body{
+font-family:Arial;
+}
+
+header{
+background-color:red;
+text-align:center;
+padding:30;
+font-size:30;
+}
+
+
+table{
+width:100%;
+}
+
+
+.navbar{
+padding:20;
+background-color:green;
+
+}
+
+.navbar li{
+display: inline-block;
+list-style: none;
+}
+
+.navbar li a{
+font-size:19;
+text-transform:uppercase;
+color:black;
+}
+
+nav li a:hover{
+color:orange;
+}
+
+#title{
+margin:20;
+font-size:34px;
+font-weight:bold;
+color:red;
+}
+
+#find{
+
+}
+
+
+img.shoes{
+width:450px;
+height:450px;
+display:block;
+margin:0;
+}
+
+
+img.jeans{
+width:450px;
+height:450px;
+align-item:centre;
+}
+
+img.jacket{
+width:450px;
+height:450px;
+justify-content:centre;
+}
+
+
+</style>
+<body>
+<header>ABC Online store</header>
+<div>
+<nav>
+<ul class="navbar">
+<li><a href="#">Home</a></li>
+<li><a href="#">Category</a></li>
+<li><a href="#">Products</a></li>
+<li><a href="#">Offers</a></li>
+<li><a href="#">Contact Us</a></li>
+</ul>
+</div>
+
+<div id="find">
+<div class="search">
+<input type="search"name=""placeholder="Search">
+<a href="#"><button class="btn">Search</button></a>
+</nav>
+<br><br>
+<hr>
+
+<p id="title">Shopping Cart</p>
+
+<table style="border: 1px solid">
+ <tr>
+ <th>Product</th>
+ <th>Price</th>
+ <th>Quantity</th>
+ <th>Total</th>
+ <th colspan="2">Status</th>
+ </tr>
+
+ <tr>
+ <td><img class="shoes" src="/home/anjali/Desktop/webap/product1.jpeg" alt="product 1">
+ <h3>Shoes</h3></td>
+ <td>Rs 750</td>
+ 
+ <td><input type="number" min="1" value="1"></td>
+ <td>Rs 650</td>
+
+ <td>
+ <button class="remove-btn">Remove</button>
+ </td>
+ <td>
+ <button class="confirm-btn">Confirm</button>
+ </td>
+
+ </tr>
+
+ <tr>
+ <td><img class="Jeans" src="/home/anjali/Desktop/webap/product2.jpg" alt="product 2">
+ <h3>Jeans</h3></td>
+ <td>Rs 350</td>
+ 
+ <td><input type="number" min="1" value="1"></td>
+ <td>Rs 700</td>
+
+ <td>
+ <button class="remove-btn">Remove</button>
+ </td>
+
+<td>
+ <button class="confirm-btn">Confirm</button>
+ </td>
+
+ </tr>
+
+<tr>
+ <td><img class="jacket" src="/home/anjali/Desktop/webap/product3.jpeg" alt="product 3">
+ <h3>Jacket</h3></td>
+ <td>Rs 300</td>
+ 
+ <td><input type="number" min="1" value="1"></td>
+ <td>Rs 600</td>
+
+ <td>
+ <button class="remove-btn">Remove</button>
+ </td>
+ <td>
+ <button class="confirm-btn">Confirm</button>
+ </td>
+
+ </tr>
+
+<tr>
+<td colspan="3"></td>
+<td class="total">Total:-1100</td>
+<tr>
+</table>
+<footer style="text-align:center">@23ABS Online store</footer>
+
