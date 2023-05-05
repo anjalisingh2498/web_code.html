@@ -1,0 +1,58 @@
+<html>
+   <head>
+      <script type = "text/javascript" src = "https://d3js.org/d3.v4.min.js"></script>
+      <style>
+         svg rect {
+            fill: aqua;
+         }
+
+         svg text {
+            fill: black;
+            font: 12px sans-serif;
+            text-anchor: end;
+         }
+      </style>
+   </head>
+
+   <body style="background-color:grey">
+        <center>
+        <h1>Number of  sports Items Left in Warehouse</h1>
+        </center>
+      <script>
+var bat = prompt("enter no of remaining cricket bats")
+        var ball = prompt("Enter the no of remaining crickets balls")
+        var bad = prompt("Enter the no of remaining badminton bats")
+        var run = prompt("Enter the no of remaining running shoes")
+        var foot = prompt("Enter the no of remaining footballs")
+        data = [bat,ball,bad,run,foot]
+
+         var width = 1000
+            scaleFactor = 30,
+            barHeight = 40;
+
+         var graph = d3.select("body")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", barHeight * data.length);
+
+         var bar = graph.selectAll("g")
+            .data(data)
+            .enter()
+            .append("g")
+            .attr("transform", function(d, i) {
+               return "translate(0," + i * barHeight + ")";
+            });
+         bar.append("rect").attr("width", function(d) {
+            return d * scaleFactor;
+         })
+
+         .attr("height", barHeight - 1);
+
+         bar.append("text")
+            .attr("x", function(d) { return (d*scaleFactor); })
+            .attr("y", barHeight / 2)
+            .attr("dy", ".35em")
+            .text(function(d) { return d; });
+      </script>
+   </body>
+</html>
