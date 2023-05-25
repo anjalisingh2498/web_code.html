@@ -1,0 +1,175 @@
+<html>
+<head>
+<title>inventory</title>
+</head>
+<style>
+*{
+background-color:;
+}
+
+header{
+text-align:center;
+background-color:pink;
+padding:30px;
+font-size:50px;
+font-family:Times New Roman;
+}
+
+.navbar{
+padding:10px;
+margin:0;
+background-color:green;
+}
+
+.navbar li{
+display:inline-block;
+list-style: none;
+}
+
+.navbar li a{
+text-transform:uppercase;
+font-size:20px;
+color:black;
+padding: 12px 14px;
+}
+
+.navbar li a:hover{
+color:orange;
+}
+
+table,th,td{
+border:5px solid;
+font-family:Times New Roman;
+font-size:20px;
+}
+
+p{
+font-size:30px;
+font-family:Times New Roman;
+color:red;
+}
+
+input[type="number"]{
+display:block;
+margin:auto;
+text-align:center;
+}
+
+.btn{
+margin:auto;
+display:block;
+border-radius:5px;
+background-color:green;
+font-size:20px;
+}
+
+#laptop{
+width:100;
+margin:auto;
+display:block;
+}
+
+h4{
+text-align:center;
+}
+
+.more{
+text-align:right;
+font-size:20px;
+}
+
+img.lo{
+width:50;
+}
+
+footer{
+padding:15px;
+background-color:yellow;
+text-align:left;
+}
+
+</style>
+
+<body>
+<header><img class="lo" src ="logo.jpg" alt="logo">Online store</header>
+<nav class="navbar">
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Product</a></li>
+
+</ul>
+</nav>
+
+<br><br>
+
+<p>Cart Items</p>
+<hr>
+<br><br>
+<table style="width:100%">
+
+<tr>
+<th>Product</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Amount</th>
+<th colspan="2">Status</th>
+</tr>
+
+<tr>
+<td><img id="laptop" src="img.jpg" alt="image1"><h4>ASUS Laptop</h4></td>
+<td><center>Rs 4000000<center></td>
+<td><input type="number" min="1"max="10" value="1"></td>
+<td><center>Rs 8400000<center> </td>
+<td><button class="btn">Buy Now</button></td>
+<td><button class="btn">Remove</button></td>
+</tr>
+
+<tr>
+<td><img id="laptop" src="img.jpg" alt="image2"><h4>DELL Laptop</h4></td>
+<td><center>Rs 4000000<center> </td>
+<td><input type="number" min="1"max="10" value="1"></td>
+<td><center>Rs 8400000<center> </td>
+<td><button class="btn">Buy Now</button></td>
+<td><button class="btn">Remove</button></td>
+</tr>
+
+
+
+<tr>
+<td><img id="laptop" src="img.jpg" alt="image3"><h4>HP Laptop</h4></td>
+<td><center>Rs 4000000<center></td>
+<td><input type="number" min="1"max="10" value="1"></td>
+<td><center>Rs 8400000<center></td>
+<td><button class="btn">Buy Now</button></td>
+<td><button class="btn">Remove</button></td>
+</tr>
+
+
+
+<tr>
+<td><img id="laptop" src="img.jpg" alt="image4"><h4>Lenovo Laptop</h4></td>
+<td><center>Rs 4000000<center></td>
+<td><input type="number" min="1"max="10" value="1"></td>
+<td><center>Rs 8400000<center> </td>
+<td><button class="btn">Buy Now</button></td>
+<td><button class="btn">Remove</button></td>
+</tr>
+
+<tr>
+<td colspan="3" style="text-align:right">Total :-</td>
+<td><center>Rs1000000<center></td>
+<td colspan="2"><button class="btn">Continue</button></td>
+</tr>
+
+</table>
+<br><br>
+<div class="more">
+<h3>For More
+<input type="button" value="Browse Here"></h3>
+</div>
+
+<footer>@abc.com</footer>
+</body>
+</html>
+
