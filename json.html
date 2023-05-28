@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>json</title>
+</head>
+<style>
+*{
+text-align:center;
+background-color:pink;
+}
+
+input[type="button"]{
+background-color:green;
+border-radius:50px;
+}
+
+table,th,td{
+border:1px solid;
+border-collapse:collapse;
+background-color:yellow;
+}
+</style>
+
+<body>
+<h2>Display Student Information</h2>
+<input type="button" onclick="Fun()" value="Student-Info">
+<p id="display"></p>
+<script>
+function Fun(){
+
+var students = `[
+	{"name" : "abc","roll_no" : 56,"age" : "djf", "email " : "abc@com"},
+	{"name" : "cde","roll_no" : "67","age" : "adj","email " :"amc@com"},
+	{"name" : "fgh","roll_no" : "abdh","age" : "av","email" : "xyz@com"}
+	]`;
+
+var student = JSON.parse(students);
+
+	tablebody = "<table><tr><th>name</th><th>roll_no</th><th>age</th><th>email</th></tr>"
+	student.forEach(function(d){
+		tablebody += "<tr><td>" + d.name + "</td><td>" + d.roll_no + "</td><td>" + d.age + "</td><td>" + d.email + "</td></tr>";
+	})
+	
+	tablebody += "</table>";
+	document.getElementById("display").innerHTML = tablebody;
+}
+</script>
+</body>
+</html>
