@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Tree Traversal and Modifications Example</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>DOM Tree Traversal Example</h1>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+    </ul>
+    <p>Click the button to highlight the list items.</p>
+    <button id="highlightBtn">Highlight List Items</button>
+  </div>
+
+  <script>
+    // Event listener for the button click
+    document.getElementById('highlightBtn').addEventListener('click', function() {
+      // Traversing and modifying the DOM
+      var container = document.getElementById('container');
+      var listItems = container.getElementsByTagName('li');
+      
+      for (var i = 0; i < listItems.length; i++) {
+        listItems[i].classList.add('highlight');
+      }
+    });
+  </script>
+</body>
+</html>
+
