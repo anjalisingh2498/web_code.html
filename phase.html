@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Propagation Example</title>
+    <style>
+      #outer {
+        padding: 20px;
+        background-color: lightblue;
+      }
+      #inner {
+        padding: 20px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer">
+      <div id="inner">
+        <button>Click me</button>
+      </div>
+    </div>
+    <script>
+      function handleCapture() {
+        console.log('Capture: outer');
+      }
+      
+      function handleTarget() {
+        console.log('Target: inner');
+      }
+      
+      function handleBubble() {
+        console.log('Bubble: outer');
+      }
+      
+      var outer = document.getElementById('outer');
+      var inner = document.getElementById('inner');
+      var button = document.querySelector('button');
+      
+      outer.addEventListener('click', handleCapture, true);
+      inner.addEventListener('click', handleTarget);
+      outer.addEventListener('click', handleBubble);
+      button.addEventListener('click', function(event) {
+        console.log('Button clicked');
+        event.stopPropagation();
+      });
+    </script>
+  </body>
+</html>
+
