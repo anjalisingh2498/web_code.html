@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Click Event Handler Example</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" onclick="changeColor()"></div>
+  
+  <script>
+    function changeColor() {
+      var box = document.querySelector('.box');
+      box.style.backgroundColor = 'pink';
+    }
+  </script>
+</body>
+</html>
+
