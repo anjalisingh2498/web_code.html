@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>deep</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+<h2>Graph</h2>
+<svg class="bar-chart"></svg>
+
+<script>
+
+	var s1 = prompt("Enter the marks:- ")
+	var s2 = prompt("Enter the marks:- ")
+	var s3 = prompt("Enter the marks:- ")
+	var s4 = prompt("Enter the marks:- ")
+
+	var dataset=[s1,s2,s3,s4]
+	var svgWidth=500 ,svgHeight=450, barPadding=10;
+	var barWidth= svgWidth/dataset.length;
+
+	var yScale = d3.scaleLinear()
+		.domain([0,d3.max(dataset)])
+		.range([0,svgHeight])
+	
+	var svg = d3.select('svg')
+		.attr('width', svgWidth)
+		.attr('height', svgHeight)
+
+	svg.selectAll('rect')
+		.data(dataset)
+		.enter()
+		.append('rect')
+		.attr('y', function(d){
+			return svgHeight - yScale(d);
+		})
+		.attr('height', function(d){
+			return yScale(d);
+		})
+		.attr('width', barWidth-barPadding)
+		.attr('transform' , function(d,i){
+			 var translate = [ barWidth*i,0]
+				return 'translate(' + translate + ')';
+		});
+	svg.selectAll('text')
+		.data(dataset)
+		.enter()
+		.append('text')
+		.attr('x', function(d,i){
+			return barWidth*i + barWidth/2.5;
+		})
+		.attr('y' ,function(d,i){
+			return svgHeight-d-2;
+		})
+		.text(function(d){
+			return d;
+		})
+		.attr('fill' , 'yellow');
+
+</script>
+</body>
+</html>
