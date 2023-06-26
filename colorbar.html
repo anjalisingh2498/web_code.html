@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>d3</title>
+</head>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<body>
+
+<h2>Display chart</h2>
+<center><svg class="bar-chart"></svg></center>
+
+<script>
+
+    var s1 = prompt("Enter the marks: ");
+    var s2 = prompt("Enter the marks: ");
+    var s3 = prompt("Enter the marks: ");
+    var s4 = prompt("Enter the marks: ");
+    var s5 = prompt("Enter the marks: ");
+
+    var dataset = [s1, s2, s3, s4, s5];
+    var svgWidth = 500, svgHeight = 450, barPadding = 10;
+    var barWidth = svgWidth / dataset.length;
+
+    var colorScale = d3.scaleOrdinal()
+        .domain(d3.range(dataset.length))
+        .range(d3.schemeCategory10);
+
+    var yScale = d3.scaleLinear()
+        .domain([0, d3.max(dataset)])
+        .range([svgHeight, 0]);
+
+    var svg = d3.select('svg')
+        .attr('width', svgWidth)
+        .attr('height', svgHeight);
+
+    svg.selectAll('rect')
+        .data(dataset)
+        .enter()
+        .append('rect')
+        .attr('x', function (d, i) {
+            return i * barWidth;
+        })
+        .attr('y', function (d) {
+            return yScale(d);
+        })
+        .attr('width', barWidth - barPadding)
+        .attr('height', function (d) {
+            return svgHeight - yScale(d);
+        })
+        .attr('fill', function (d, i) {
+            return colorScale(i);
+        });
+
+    svg.selectAll('text')
+        .data(dataset)
+        .enter()
+        .append('text')
+        .text(function (d) {
+            return d;
+        })
+        .attr('x', function (d, i) {
+            return i * barWidth + (barWidth - barPadding) / 2;
+        })
+        .attr('y', function (d) {
+            return yScale(d) + 20;
+        })
+        .attr('text-anchor', 'middle')
+        .attr('fill', 'white');
+
+</script>
+</body>
+</html>
