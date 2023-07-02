@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>js</title>
+</head>
+<style>
+body{
+background-color:orange;
+}
+form{
+font-family:Times New Roman;
+font-size: 20px;
+text-align:center;
+margin:400px;
+}
+input[type="button"]{
+font-family:Times New Roman;
+font-size:25px;
+border-radius:20px;
+border-style:none;
+background-color:green;
+}
+</style>
+<body>
+<form>
+<h1>LOGIN</h1>
+<label>Username</label>
+<input type="text" id="uname" placeholder="username">
+<br><br>
+
+<label>Password</label>
+<input type="text" id="pass" placeholder="pass">
+
+<br><br>
+<input type="button" onclick="validate()" value="Submit">
+</form>
+<script>
+
+function validate(){
+const uname = document.getElementById("uname").value;
+const pass = document.getElementById("pass").value;
+
+const unamepatt = /^[a-zA-Z0-9]{3,16}$/;
+const passpatt = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+
+if(!uname.match(unamepatt)){
+	alert("Invalid Username")
+}
+else if(!pass.match(passpatt)){
+	alert("Invalid Password")
+}
+else{
+	var d = new Date();
+	var time = d.toLocaleTimeString();
+	
+	alert("Welcome" + uname + "Login time" + time)
+	
+	document.body.innerHTML += '<div welcome ' + uname + 'logged at ' + time + '.</div>';
+	document.body.style.backgroundColor="pink"
+}
+}
+</script>
+</body>
+</html>
