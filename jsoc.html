@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>json</title>
+</head>
+<body>
+<h2>Display</h2>
+<input type="button" onclick="Fun()" value="student-Info">
+<p id="show"></p>
+<script>
+function Fun(){
+	var students=`[
+		{ "name" : "abx" , "age" : "67", "mobile" : "90xxxxxx" , "email" : "avc"},
+		{ "name" : "abx" , "age" : "67", "mobile" : "90xxxxxx" , "email" : "avc"},
+		{ "name" : "abx" , "age" : "67", "mobile" : "90xxxxxx" , "email" : "avc"},
+		{ "name" : "abx" , "age" : "67", "mobile" : "90xxxxxx" , "email" : "avc"}
+		]`;
+		
+	var student=JSON.parse(students);
+
+	var tablebody = "<table><tr><th>name</th><th>age</th><th>mobile</th><th>email</th></tr>"
+	
+	student.forEach(function(d){
+		tablebody += "<tr><td>" + d.name + "</td><td>" + d.age + "</td><td>" + d.mobile + "</td><td>" + d.email + "</td><tr>";
+	})
+	
+	tablebody += "</table>";
+
+	document.getElementById("show").innerHTML = tablebody;
+}
+</script>
+</body>
+</html>
