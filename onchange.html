@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <select id="select-color" onchange="changeColor()">
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+    </select>
+    <p id="text">Change the color</p>
+    
+    <script>
+      function changeColor() {
+        var color = document.getElementById("select-color").value;
+        document.getElementById("text").style.color = color;
+      }
+    </script>
+  </body>
+</html>
+
