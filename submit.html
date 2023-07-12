@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Submit Event Handler Example</title>
+</head>
+<body>
+  <form onsubmit="submitForm(event)">
+    <input type="text" name="name" placeholder="Enter your name">
+    <button type="submit">Submit</button>
+  </form>
+  
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      var input = event.target.elements.name.value;
+      alert('Submitted name: ' + input);
+    }
+  </script>
+</body>
+</html>
+
